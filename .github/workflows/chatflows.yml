@@ -20,7 +20,7 @@ jobs:
           sudo poetry install
       - name: Run tests
         run: |
-          poetry run pytest -sv tests/ --cov=jumpscale --cov-report=xml
+          sudo poetry run pytest -sv tests/clients/sshclient/test_sshclient.py  --cov=jumpscale --cov-report=xml
       - name: Upload coverage to Codecov
         if: success()
         uses: codecov/codecov-action@v1
